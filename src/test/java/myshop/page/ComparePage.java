@@ -26,11 +26,12 @@ public class ComparePage extends Interactions {
 	private static final By fieldCompositions = cssSelector("#product_comparison > tbody > tr:nth-child(2) > td.comparison_feature_odd.comparison_infos.product-1");
 	private static final By fieldStyles = cssSelector("#product_comparison > tbody > tr:nth-child(3) > td.comparison_feature_even.comparison_infos.product-1");
 	private static final By fieldProperties = cssSelector("#product_comparison > tbody > tr:nth-child(4) > td.comparison_feature_odd.comparison_infos.product-1");
+
 	public String comparePage() throws InterruptedException {
 		click(btnWomen);
 		hoverOverElement(mouse);
 		clickable(btnAddToCompare1);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		hoverOverElement(mouse2);
 		clickable(btnAddToCompare2);
 		click(btnCompare);
@@ -86,7 +87,7 @@ public class ComparePage extends Interactions {
 		click(btnWomen);
 		hoverOverElement(mouse);
 		clickable(btnAddToCompare1);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		hoverOverElement(mouse2);
 		clickable(btnAddToCompare2);
 		click(btnCompare);

@@ -18,7 +18,6 @@ public class LoginTest extends BaseTest {
 	RegisterData registerData = new RegisterData();
 	Validation validation = new Validation();
 
-
 	@Test(description = CE_LOGIN_01)
 	public void login(){
 
@@ -30,7 +29,6 @@ public class LoginTest extends BaseTest {
 
 		String message = loginPage.validateLogoutBtn();
 		validation.textValidation(message, "Sign out");
-
 	}
 
 	@Test(description = CE_LOGIN_02)

@@ -22,4 +22,5 @@ DataFakerGenerator dataFakerGenerator = new DataFakerGenerator();
 
         return checkoutDTO;
     }
+
 }

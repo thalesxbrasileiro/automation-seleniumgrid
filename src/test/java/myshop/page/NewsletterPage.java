@@ -21,4 +21,5 @@ public class NewsletterPage extends Interactions {
     public String validateTextConfirmSubscribe(){
         return readText(validateMsg);
     }
+
 }

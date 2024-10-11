@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 
 import static br.com.dbccompany.myshop.storys.CheckoutStory.*;
 
-
 public class CheckoutTest extends BaseTest {
 
     CheckoutData checkoutData = new CheckoutData();
@@ -112,7 +111,6 @@ public class CheckoutTest extends BaseTest {
         validation.textValidation("This country requires you to chose a State.", msg);
     }
 
-
     @Test(description = CE_CHECKOUT_05)
     public void testCheckoutWithoutFillingZip(){
 
@@ -131,7 +129,6 @@ public class CheckoutTest extends BaseTest {
         String msg = checkoutPage.msgError2();
         validation.textValidation("The Zip/Postal code you've entered is invalid. It must follow this format: 00000", msg);
     }
-
 
     @Test(description = CE_CHECKOUT_06)
     public void testCheckoutWithoutFillingNumber(){
@@ -170,7 +167,6 @@ public class CheckoutTest extends BaseTest {
         String msg = checkoutPage.msgValidationSuccess();
         validation.textValidation("Your order on My Shop is complete.", msg);
     }
-
 
     @Test(description = CE_CHECKOUT_08)
     public void testCheckoutWithoutIgree()  {

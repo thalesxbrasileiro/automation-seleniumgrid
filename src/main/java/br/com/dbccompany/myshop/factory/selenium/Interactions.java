@@ -43,7 +43,6 @@ public class Interactions extends Elements {
 		actions.moveToElement(element(by)).perform();
 	}
 
-
     protected static String readAttribute(By by, String attribute) {
         elementToClickable(by);
         return element(by).getAttribute(attribute);

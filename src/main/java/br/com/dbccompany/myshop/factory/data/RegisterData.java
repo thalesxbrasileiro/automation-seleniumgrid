@@ -18,4 +18,5 @@ public class RegisterData {
 
         return registerDto;
     };
+
 }

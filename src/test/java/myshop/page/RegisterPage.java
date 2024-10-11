@@ -26,7 +26,6 @@ public class RegisterPage extends Interactions {
     private static final By errorMessage = cssSelector("#center_column .alert ol li");
     private static final By errorMessageEmail = cssSelector("div.alert-danger ol li");
 
-
     Faker faker = new Faker();
 
     public void selecionaDataDeNascimento(LocalDate localDate) {
@@ -42,7 +41,6 @@ public class RegisterPage extends Interactions {
         click(campoMonth);
         click(campoYear);
     }
-
 
     public void selecionaGenero(String nomeCompleto) {
 

@@ -16,7 +16,6 @@ public class LogoutTest extends BaseTest {
     RegisterPage registerPage = new RegisterPage();
     RegisterData registerData = new RegisterData();
 
-
         @Test(description = CE_LOGOUT_01)
         public void logout(){
             RegisterDto user = registerData.validRegister();

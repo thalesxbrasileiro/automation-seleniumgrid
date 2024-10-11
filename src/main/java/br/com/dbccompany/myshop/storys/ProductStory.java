@@ -15,5 +15,4 @@ public class ProductStory {
 	public static final String CE_PRODUCT_07 = "CE-07 Validar enviar para amigo";
 	public static final String CE_PRODUCT_08 = "CE-08 Validar botão de imprimir";
 	public static final String CE_PRODUCT_09 = "CE-09 Validar botão de adicionar ao carrinho quando existir produto em estoque";
-
 }

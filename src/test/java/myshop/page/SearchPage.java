@@ -26,4 +26,5 @@ public class SearchPage extends Interactions {
     public String validateProduct() {
         return readText(Product);
     }
+
 }

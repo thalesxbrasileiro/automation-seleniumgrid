@@ -12,7 +12,6 @@ import static org.openqa.selenium.By.cssSelector;
 @NoArgsConstructor
 public class ProductPage extends Interactions {
 
-
 	private static final By btnWomen = cssSelector("#block_top_menu > ul > li:nth-child(1) > a");
 	private static final By fieldWomen = cssSelector("#center_column > h1 > span.cat-name");
 	private static final By fieldList = cssSelector("#center_column > ul");

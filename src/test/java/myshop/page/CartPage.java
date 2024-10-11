@@ -9,7 +9,6 @@ import static org.openqa.selenium.By.cssSelector;
 @NoArgsConstructor
 public class CartPage extends Interactions {
 
-    // elements to click
     private static final By btnBestSellers = cssSelector("#home-page-tabs > li:nth-child(2) > a");
     private static final By btnMore = cssSelector("#blockbestsellers > li:nth-child(1) > div > div.right-block > h5 > a");
     private static final By selectSize = cssSelector("#group_1 > option[value=\"2\"]");
@@ -25,7 +24,6 @@ public class CartPage extends Interactions {
     private static final By btnMoreQuantityInCart = cssSelector("#product_2_10_0_0 > td:nth-child(5) > div > a:nth-child(2)");
     private static final By totalPrice = cssSelector("#total_price");
     private static final By returnToShopping = cssSelector("#center_column > p.cart_navigation.clearfix > a.button-exclusive.btn.btn-default");
-
 
     public void addToCart() throws InterruptedException{
         click(btnBestSellers);
@@ -76,4 +74,5 @@ public class CartPage extends Interactions {
     public void returnToShopping(){
         click(returnToShopping);
     }
+
 }

@@ -20,14 +20,13 @@ public class BrowserService {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setBrowserName("chrome");
 
-			driver = new RemoteWebDriver(new URL("http://localhost:4444"), capabilities);
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
 			wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 			driver.get(url);
 			driver.manage().window().maximize();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-
 	}
 
     public void quit() {

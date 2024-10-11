@@ -15,4 +15,5 @@ public class NewsletterData {
 
         return newsletterDto;
     }
+
 }

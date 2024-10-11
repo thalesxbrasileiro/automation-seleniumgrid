@@ -14,4 +14,5 @@ public class SearchData {
 
         return searchDto;
     }
+
 }

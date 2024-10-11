@@ -30,11 +30,9 @@ public class CheckoutPage extends Interactions {
     private static final By errorMsgAddress =  cssSelector(".alert b");
     private static final By errorMsgAddress2 =  cssSelector(".alert li");
 
-
     public void goHome(){
         click(btnHome);
     }
-
 
     public void checkout(String company, String address, String city, String state, String zip, String country, String homeNumber, String cellPhone, String info, String commentTxt ) throws InterruptedException {
         click(btnProceed);
@@ -57,8 +55,6 @@ public class CheckoutPage extends Interactions {
         click(cardPayment);
         click(btnProceedCkt);
     }
-
-
 
     public void checkoutWithoutAddress(String company,String city, String state, String zip, String country, String homeNumber, String cellPhone, String info){
         click(btnProceed);
@@ -89,8 +85,6 @@ public class CheckoutPage extends Interactions {
         click(btnSave);
     }
 
-
-
     public void checkoutWithoutState(String company, String address, String city, String zip, String country, String homeNumber, String cellPhone, String info ){
         click(btnProceed);
         sendKeys(fieldCompany, company);
@@ -104,8 +98,6 @@ public class CheckoutPage extends Interactions {
         click(fieldReference);
         click(btnSave);
     }
-
-
 
     public void checkoutWithoutZip(String company, String address, String city, String state, String country, String homeNumber, String cellPhone, String info ) {
         click(btnProceed);
@@ -155,8 +147,6 @@ public class CheckoutPage extends Interactions {
         click(btnProceedCkt);
     }
 
-
-
     public void checkoutWithoutIgree(String company, String address, String city, String state, String zip, String country, String homeNumber, String cellPhone, String info, String commentTxt ){
         click(btnProceed);
         sendKeys(fieldCompany, company);
@@ -174,7 +164,6 @@ public class CheckoutPage extends Interactions {
         click(btnProceedCkt);
         click(btnProceedCkt);
     }
-
 
     public String msgValidationSuccess(){
         return readText(alerSuccess);

@@ -19,7 +19,6 @@ public class RegisterTest extends BaseTest {
     RegisterPage registerPage = new RegisterPage();
     Validation validation = new Validation();
 
-
     @Test
     @Description(CE_REGISTER_01)
     public void testRegisterUser(){
