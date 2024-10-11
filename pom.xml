@@ -22,7 +22,6 @@
             <artifactId>selenium-java</artifactId>
             <version>4.25.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -43,6 +42,11 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
             <version>${allure-testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-grid</artifactId>
+            <version>4.25.0</version>
         </dependency>
     </dependencies>
 
