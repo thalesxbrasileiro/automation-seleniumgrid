@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import static br.com.dbccompany.myshop.storys.CartStory.*;
 
-
 public class CartTest extends BaseTest{
 
     Validation validation = new Validation();

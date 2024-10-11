@@ -11,7 +11,6 @@ import static br.com.dbccompany.myshop.storys.LogOutStory.CE_LOGOUT_01;
 
 public class LogoutTest extends BaseTest {
 
-
     LogoutPage logoutPage = new LogoutPage();
     Validation validation = new Validation();
     RegisterPage registerPage = new RegisterPage();
