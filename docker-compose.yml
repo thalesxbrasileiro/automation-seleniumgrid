@@ -1,12 +1,21 @@
+version: '3.8'
+
 services:
   selenium-hub:
-    image: selenium/hub
+    image: selenium/hub:4.10.0
     container_name: selenium-hub
     ports:
       - "4444:4444"
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_SESSION_TIMEOUT=60
+      - SE_OPENTELEMETRY_EXPORTER=none
 
   chrome:
-    image: selenium/node-chrome
+    image: selenium/node-chrome:4.10.0
+    container_name: chrome-node
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -16,7 +25,8 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   firefox:
-    image: selenium/node-firefox
+    image: selenium/node-firefox:4.10.0
+    container_name: firefox-node
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -27,6 +37,7 @@ services:
 
   edge:
     image: selenium/node-edge:4.10.0
+    container_name: edge-node
     shm_size: 2gb
     depends_on:
       - selenium-hub

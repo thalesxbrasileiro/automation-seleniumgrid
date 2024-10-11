@@ -1,6 +1,6 @@
 # Automation Selenium Grid Project
 
-Este projeto utiliza o Selenium Grid para executar testes automatizados em paralelo e distribuídos. Ele foi configurado com as bibliotecas Selenium, TestNG, DataFaker, Allure, e Lombok, visando facilitar a criação de testes eficientes e organizados.
+Este projeto utiliza o Selenium Grid para executar testes automatizados em paralelo e distribuídos. Ele foi configurado com as bibliotecas Selenium, TestNG, DataFaker, Allure e Lombok, visando facilitar a criação de testes eficientes e organizados.
 
 ## Tecnologias Utilizadas
 
@@ -20,25 +20,27 @@ Este projeto utiliza o Selenium Grid para executar testes automatizados em paral
 
 ## Instalação e Configuração
 
-1. Clone este repositório:
+### 1. Configuração Standalone do Selenium Grid
+
+Caso prefira simplificar a configuração do Selenium Grid, você pode optar pelo modo standalone, onde hub e node são executados juntos em uma única máquina.
+
+1. Baixe o [servidor do Selenium](https://github.com/SeleniumHQ/selenium/releases/tag/selenium-4.25.0)
+
+2. Execute o servidor Selenium no modo standalone:
 
     ```bash
-    git clone https://github.com/thalesxbrasileiro/automation-seleniumgrid.git
+    java -jar selenium-server-standalone-<version>.jar standalone
     ```
 
-2. Navegue até a pasta do projeto:
+Essa configuração permite que você execute o Selenium Grid sem precisar configurar máquinas separadas para hub e node, facilitando o processo de automação localmente ou em pequenos ambientes de teste.
 
-    ```bash
-    cd automation-seleniumgrid
-    ```
+### 2. Configuração Distribuída do Selenium Grid
 
-3. Instale as dependências do Maven:
+Para executar os testes em um ambiente distribuído com hub e nodes separados:
 
-    ```bash
-    mvn clean install
-    ```
+1. Baixe o [servidor do Selenium](https://github.com/SeleniumHQ/selenium/releases/tag/selenium-4.25.0)
 
-4. Configure o Selenium Grid como hub e inicie os nodes:
+2. Configure o Selenium Grid como hub e inicie os nodes:
 
     ```bash
     java -jar selenium-server-<version>.jar hub
@@ -49,24 +51,20 @@ Este projeto utiliza o Selenium Grid para executar testes automatizados em paral
     ```bash
     java -jar selenium-server-<version>.jar node --url http://<hub-ip>:4444
     ```
+    
+    Substitua <hub-ip> pelo endereço IP do seu hub Selenium Grid.
 
-## Configuração Standalone do Selenium Grid
+### 3. Configuração do Selenium Grid com Docker
 
-Caso prefira simplificar a configuração do Selenium Grid, você pode optar pelo modo standalone, onde hub e node são executados juntos em uma única máquina.
+Para uma configuração ainda mais simplificada, você pode usar o Docker e o Docker Compose para executar o Selenium Grid. Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina.
 
-1. Baixe o servidor do Selenium:
-
-    ```bash
-    curl -O https://selenium-release.storage.googleapis.com/<version>/selenium-server-standalone-<version>.jar
-    ```
-
-2. Execute o servidor Selenium no modo standalone:
+1. Execute o seguinte comando na pasta raiz do projeto para iniciar o Selenium Grid:
 
     ```bash
-    java -jar selenium-server-standalone-<version>.jar standalone
+    docker-compose up -d
     ```
 
-Essa configuração permite que você execute o Selenium Grid sem precisar configurar máquinas separadas para hub e node, facilitando o processo de automação localmente ou em pequenos ambientes de teste.
+Isso iniciará o Selenium Grid com um hub e nodes para Chrome e Firefox, tudo em contêineres Docker.
 
 ## Estrutura do Projeto
 
