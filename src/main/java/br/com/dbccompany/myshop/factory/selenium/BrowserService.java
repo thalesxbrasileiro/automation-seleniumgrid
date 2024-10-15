@@ -1,4 +1,19 @@
-package br.com.dbccompany.myshop.factory.selenium;  import org.openqa.selenium.WebDriver; import org.openqa.selenium.chrome.ChromeOptions; import org.openqa.selenium.edge.EdgeOptions; import org.openqa.selenium.firefox.FirefoxOptions; import org.openqa.selenium.remote.RemoteWebDriver; import org.openqa.selenium.support.ui.WebDriverWait;  import java.net.MalformedURLException; import java.net.URL; import java.time.Duration; import java.util.logging.Level; import java.util.logging.Logger;  public class BrowserService {
+package br.com.dbccompany.myshop.factory.selenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.time.Duration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class BrowserService {
 	private static final String SELENIUM_GRID_URL = "http://localhost:4444/";
 	private static final Logger logger = Logger.getLogger(BrowserService.class.getName());
 
