@@ -39,7 +39,7 @@ public class Interactions extends Elements {
 	}
 
 	protected static void hoverOverElement(By by) {
-		Actions actions = new Actions(driver);
+		Actions actions = new Actions(driver.get());
 		actions.moveToElement(element(by)).perform();
 	}
 

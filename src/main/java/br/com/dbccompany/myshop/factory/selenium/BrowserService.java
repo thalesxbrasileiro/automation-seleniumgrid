@@ -2,6 +2,8 @@ package br.com.dbccompany.myshop.factory.selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,19 +13,24 @@ import java.time.Duration;
 
 public class BrowserService {
 
-    public static WebDriver driver;
-    public static WebDriverWait wait;
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+	public static ThreadLocal<WebDriverWait> wait = new ThreadLocal<>();
 
-	public void initBrowser(String url) {
-
+	public void initBrowser(String url, String browser) {
 		try {
-			ChromeOptions options = new ChromeOptions();
-			options.getBrowserName();
-
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/"), options);
-			wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-			driver.get(url);
-			driver.manage().window().maximize();
+			if (browser.equalsIgnoreCase("chrome")) {
+				ChromeOptions options = new ChromeOptions();
+				driver.set(new RemoteWebDriver(new URL("http://localhost:4444/"), options));
+			} else if (browser.equalsIgnoreCase("edge")) {
+				EdgeOptions options = new EdgeOptions();
+				driver.set(new RemoteWebDriver(new URL("http://localhost:4444/"), options));
+			} else if (browser.equalsIgnoreCase("firefox")) {
+				FirefoxOptions options = new FirefoxOptions();
+				driver.set(new RemoteWebDriver(new URL("http://localhost:4444/"), options));
+			}
+			wait.set(new WebDriverWait(driver.get(), Duration.ofSeconds(30)));
+			driver.get().get(url);
+			driver.get().manage().window().maximize();
 		} catch (MalformedURLException e) {
 			System.err.println("A URL do Selenium Grid está incorreta: " + e.getMessage());
 			e.printStackTrace();
@@ -33,8 +40,7 @@ public class BrowserService {
 		}
 	}
 
-    public void quit() {
-		driver.quit();
-    }
-
+	public void quit() {
+		driver.get().quit();
+	}
 }
