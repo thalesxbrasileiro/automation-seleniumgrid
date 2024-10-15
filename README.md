@@ -49,7 +49,7 @@ Para executar os testes em um ambiente distribuído com hub e nodes separados:
    Em outra máquina ou terminal para o node:
 
     ```bash
-    java -jar selenium-server-<version>.jar node --url http://<hub-ip>:4444
+    java -jar selenium-server-<version>.jar node --hub http://<hub-ip>:4444
     ```
     
     Substitua <hub-ip> pelo endereço IP do seu hub Selenium Grid.
