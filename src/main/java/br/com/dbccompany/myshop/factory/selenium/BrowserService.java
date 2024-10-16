@@ -21,18 +21,26 @@ public class BrowserService {
 	public static ThreadLocal<WebDriverWait> wait = new ThreadLocal<>();
 
 
-	public void initBrowser(String url, String browser) {
+	public void initBrowser(String url, String browser, String os) {
 
 		try {
+			URL gridUrl = new URL(SELENIUM_GRID_URL);
+
 			switch (browser.toLowerCase()) {
 				case "chrome":
-					driver.set(new RemoteWebDriver(new URL(SELENIUM_GRID_URL), new ChromeOptions()));
+					ChromeOptions chromeOptions = new ChromeOptions();
+					chromeOptions.setCapability("platformName", os);
+					driver.set(new RemoteWebDriver(gridUrl, chromeOptions));
 					break;
 				case "edge":
-					driver.set(new RemoteWebDriver(new URL(SELENIUM_GRID_URL), new EdgeOptions()));
+					EdgeOptions edgeOptions = new EdgeOptions();
+					edgeOptions.setCapability("platformName", os);
+					driver.set(new RemoteWebDriver(gridUrl, edgeOptions));
 					break;
 				case "firefox":
-					driver.set(new RemoteWebDriver(new URL(SELENIUM_GRID_URL), new FirefoxOptions()));
+					FirefoxOptions firefoxOptions = new FirefoxOptions();
+					firefoxOptions.setCapability("platformName", os);
+					driver.set(new RemoteWebDriver(gridUrl, firefoxOptions));
 					break;
 				default:
 					throw new IllegalArgumentException("Navegador não suportado: " + browser);

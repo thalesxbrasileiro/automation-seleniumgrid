@@ -7,10 +7,10 @@ import org.testng.annotations.Parameters;
 
 public class BaseTest extends BrowserService {
 
-	@Parameters({"browser"})
+	@Parameters({"browser", "os"})
 	@BeforeMethod
-	public void openBrowser(String browser) {
-		initBrowser("http://www.automationpractice.pl/index.php", browser);
+	public void openBrowser(String browser, String os) {
+		initBrowser("http://www.automationpractice.pl/index.php", browser, os);
 	}
 
 	@AfterMethod
