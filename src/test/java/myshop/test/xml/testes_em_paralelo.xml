@@ -1,20 +1,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="tests" thread-count="4">
-    <test name="ChromeTest">
+    <test name="ChromeTest" parallel="methods" thread-count="2">
         <parameter name="browser" value="chrome"/>
         <parameter name="os" value="linux"/>
         <classes>
             <class name="myshop.test.LoginTest"/>
         </classes>
     </test>
-    <test name="FirefoxTest">
+    <test name="FirefoxTest" parallel="methods" thread-count="2">
         <parameter name="browser" value="firefox"/>
         <parameter name="os" value="linux"/>
         <classes>
             <class name="myshop.test.LoginTest"/>
         </classes>
     </test>
-    <test name="EdgeTest">
+    <test name="EdgeTest" parallel="methods" thread-count="1">
         <parameter name="browser" value="edge"/>
         <parameter name="os" value="linux"/>
         <classes>
